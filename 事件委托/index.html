@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="添加" />
+		<br />
+		<ul id="ul1">
+		    <li>item 1</li>
+		    <li>item 2</li>
+		    <li>item 3</li>
+		    <li>item 4</li>
+		</ul>
+		<script type="text/javascript">
+			const oBtn = document.getElementById("btn");
+			const oUl = document.getElementById("ul1");
+			let num = 4;
+			
+			//事件委托，添加的子元素也有事件
+			oUl.onclick = function (ev) {
+			    ev = ev || window.event;
+			    const target = ev.target || ev.srcElement;
+			    if (target.nodeName.toLowerCase() == 'li') {
+			        console.log('the content is: ', target.innerHTML);
+			    }
+			
+			};
+			
+			//添加新节点
+			oBtn.onclick = function () {
+			    num++;
+			    const oLi = document.createElement('li');
+			    oLi.innerHTML = `item ${num}`;
+			    oUl.appendChild(oLi);
+			};
+		</script>
+	</body>
+</html>
