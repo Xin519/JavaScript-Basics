@@ -1,3 +1,4 @@
+// 在JavaScript中，new操作符用于创建一个给定构造函数的实例对象
 function mynew(Func, ...args) {
     // 1.创建一个新对象
     const obj = {}
