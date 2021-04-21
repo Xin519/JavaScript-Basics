@@ -18,7 +18,7 @@ function ajax(options) {
         xhr.open('POST', options.url, true)
         xhr.send(params)
 	}
-    //接收请求
+    //接收请求 监听
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             let status = xhr.status
