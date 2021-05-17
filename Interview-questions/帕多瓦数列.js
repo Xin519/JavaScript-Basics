@@ -15,6 +15,8 @@ function f(n){
 	// 	console.log('-------------------')
 	// 	console.log(arrays)
 	// 	return arrays[n]
+	// } else {
+	// 	return 1
 	// }
 	
 	if ( n < 3 ) return 1
