@@ -28,8 +28,10 @@ function throttled1(fn, delay = 500) {
 
 // 使用定时器写法，delay毫秒后第一次执行，第二次事件停止触发后依然会再一次执行
 function throttled2(fn, delay = 500) {
-    let timer = null
-    return function (...args) {
+	console.log(timer)
+    var timer = null
+    let foo = function (...args) {
+		console.log(timer)
         if (!timer) {
             timer = setTimeout(() => {
                 fn.apply(this, args)
@@ -37,6 +39,7 @@ function throttled2(fn, delay = 500) {
             }, delay);
         }
     }
+	return foo()
 }
 
 // 可以将时间戳写法的特性与定时器写法的特性相结合，实现一个更加精确的节流

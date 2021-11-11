@@ -3,7 +3,6 @@ function ajax(options) {
     //创建XMLHttpRequest对象
     const xhr = new XMLHttpRequest()
 
-
     //初始化参数的内容
     options = options || {}
     options.type = (options.type || 'GET').toUpperCase()
@@ -18,6 +17,7 @@ function ajax(options) {
         xhr.open('POST', options.url, true)
         xhr.send(params)
 	}
+	
     //接收请求 监听
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
